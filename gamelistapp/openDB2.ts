@@ -3,7 +3,7 @@ import sqlite3 from 'sqlite3';
 
 export async function openDB2(){
     return open({
-        filename: '/static/gamelist.sqlite',
+        filename: './public/gamelist.sqlite',
         driver: sqlite3.Database
       })
 }
