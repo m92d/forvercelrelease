@@ -27,7 +27,7 @@ const Home = ({gameinfos}:HomeProps)=>{
 }
 export default Home
 
-export const getStaticProps:GetStaticProps = async (ctx) =>{
+export const getStaticProps:GetStaticProps = async () =>{
 
     //console.log('load static props');
     const db = await openDB();
