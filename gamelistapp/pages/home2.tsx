@@ -7,7 +7,7 @@ export interface HomeProps{
 }
 
 
-const Home2 = ({gameinfos}:HomeProps)=>{
+const Home2 =  ({gameinfos}:HomeProps)=>{
 
     return(
         <div>
