@@ -1,5 +1,5 @@
 import { gameInfo } from "../interfaces/gameInfo";
-import {GetStaticProps} from 'next';
+import {GetServerSideProps} from 'next';
 import { openDB } from "../openDB";
 
 export interface HomeProps{
@@ -7,7 +7,7 @@ export interface HomeProps{
 }
 
 
-const Home = ({gameinfos}:HomeProps)=>{
+const Home2 = ({gameinfos}:HomeProps)=>{
 
     return(
         <div>
@@ -25,11 +25,11 @@ const Home = ({gameinfos}:HomeProps)=>{
         </div>
     );
 }
-export default Home
+export default Home2
 
-export const getStaticProps:GetStaticProps = async () =>{
+export const getServerSideProps:GetServerSideProps = async () =>{
 
-    console.log('load static props');
+    console.log('load serverside props');
     const db = await openDB();
     const gameinfos = await db.all(`
         select * from GAMEINFO
