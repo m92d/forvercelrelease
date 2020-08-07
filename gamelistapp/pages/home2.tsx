@@ -1,5 +1,5 @@
 import { gameInfo } from "../interfaces/gameInfo";
-import {GetServerSideProps} from 'next';
+import {GetServerSideProps,GetStaticProps} from 'next';
 import { openDB2 } from "../openDB2";
 
 export interface HomeProps{
@@ -28,7 +28,7 @@ const Home2 = ({gameinfos}:HomeProps)=>{
 export default Home2
 
 
-export const getServerSideProps:GetServerSideProps = async () =>{
+export const getStaticProps:GetStaticProps = async () =>{
 
     console.log('load serverside props');
     const db = await openDB2();
