@@ -28,16 +28,16 @@ const Home2 = ({gameinfos}:HomeProps)=>{
 export default Home2
 
 
-export const getStaticProps:GetStaticProps = async () =>{
+export const getStaticProps:GetStaticProps = async (ctx) =>{
 
     console.log('load serverside props');
     const db = await openDB2();
-    //const gameinfos = await db.all<gameInfo[]>('select * from GAMEINFO');
+    const gameinfos = await db.all<gameInfo[]>('select * from GAMEINFO');
 
-    const gameinfos =[
-        {id:1,title:'title1',platform:'platform',genre:'genre',playcount:1,infomation:'infomation',cratedate:'2099-01-01'},
-        {id:2,title:'title1',platform:'platform',genre:'genre',playcount:1,infomation:'infomation',cratedate:'2099-01-01'}
-    ];
+    //const gameinfos =[
+    //    {id:1,title:'title1',platform:'platform',genre:'genre',playcount:1,infomation:'infomation',cratedate:'2099-01-01'},
+    //    {id:2,title:'title1',platform:'platform',genre:'genre',playcount:1,infomation:'infomation',cratedate:'2099-01-01'}
+    //];
 
     return {props:{gameinfos}};
 
