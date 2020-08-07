@@ -1,6 +1,6 @@
 import { gameInfo } from "../interfaces/gameInfo";
 import {GetServerSideProps} from 'next';
-import { openDB } from "../openDB";
+import { openDB2 } from "../openDB2";
 
 export interface HomeProps{
     gameinfos:gameInfo[];
@@ -31,7 +31,7 @@ export default Home2
 export const getServerSideProps:GetServerSideProps = async () =>{
 
     console.log('load serverside props');
-    const db = await openDB();
+    const db = await openDB2();
     const gameinfos = await db.all<gameInfo[]>('select * from GAMEINFO');
 
     //const gameinfos =[
