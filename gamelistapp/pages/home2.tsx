@@ -1,6 +1,6 @@
 import { gameInfo } from "../interfaces/gameInfo";
 import {GetServerSideProps} from 'next';
-//import { openDB } from "../openDB";
+import { openDB } from "../openDB";
 
 export interface HomeProps{
     gameinfos:gameInfo[];
@@ -31,15 +31,13 @@ export default Home2
 export const getServerSideProps:GetServerSideProps = async () =>{
 
     console.log('load serverside props');
-    //const db = await openDB();
-    //const gameinfos = await db.all<gameInfo[]>(`
-    //    select * from GAMEINFO
-    //`);
+    const db = await openDB();
+    const gameinfos = await db.all<gameInfo[]>('select * from GAMEINFO');
 
-    const gameinfos =[
-        {id:1,title:'title1',platform:'platform',genre:'genre',playcount:1,infomation:'infomation',cratedate:'2099-01-01'},
-        {id:2,title:'title1',platform:'platform',genre:'genre',playcount:1,infomation:'infomation',cratedate:'2099-01-01'}
-    ];
+    //const gameinfos =[
+    //    {id:1,title:'title1',platform:'platform',genre:'genre',playcount:1,infomation:'infomation',cratedate:'2099-01-01'},
+    //    {id:2,title:'title1',platform:'platform',genre:'genre',playcount:1,infomation:'infomation',cratedate:'2099-01-01'}
+    //];
 
     return {props:{gameinfos}};
 
