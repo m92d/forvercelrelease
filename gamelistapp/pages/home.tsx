@@ -21,6 +21,7 @@ const Home = ({gameinfos}:HomeProps)=>{
 
                     );
                 })}
+                <img src="/test.png"/>
             </div>
         </div>
     );
