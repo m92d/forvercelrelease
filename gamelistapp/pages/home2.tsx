@@ -34,6 +34,7 @@ export const getServerSideProps:GetServerSideProps = async () =>{
     //const gameinfos = await db.all<gameInfo[]>(`
     //    select * from GAMEINFO
     //`);
+    
     const gameinfos =[
         {id:1,title:'title1',platform:'platform',genre:'genre',playcount:1,infomation:'infomation',cratedate:'2099-01-01'},
         {id:2,title:'title1',platform:'platform',genre:'genre',playcount:1,infomation:'infomation',cratedate:'2099-01-01'}
