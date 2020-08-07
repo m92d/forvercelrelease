@@ -30,7 +30,7 @@ export default Home2
 export const getServerSideProps:GetServerSideProps = async () =>{
 
     console.log('load serverside props');
-    const db = await openDB();
+    //const db = await openDB();
     //const gameinfos = await db.all<gameInfo[]>(`
     //    select * from GAMEINFO
     //`);
