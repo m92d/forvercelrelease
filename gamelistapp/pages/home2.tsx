@@ -27,7 +27,7 @@ const Home2 = ({gameinfos}:HomeProps)=>{
 }
 export default Home2
 
-export const getServerSideProps:GetServerSideProps<HomeProps> = async () =>{
+export const getServerSideProps:GetServerSideProps = async () =>{
 
     console.log('load serverside props');
     const db = await openDB();
