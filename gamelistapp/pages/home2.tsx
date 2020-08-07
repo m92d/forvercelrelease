@@ -1,6 +1,6 @@
 import { gameInfo } from "../interfaces/gameInfo";
 import {GetServerSideProps,GetStaticProps} from 'next';
-import { openDB2 } from "./openDB2";
+import { openDB2 } from "../openDB2";
 
 export interface HomeProps{
     gameinfos:gameInfo[];
