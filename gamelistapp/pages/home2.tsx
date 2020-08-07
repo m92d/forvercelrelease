@@ -11,7 +11,7 @@ const Home2 = ({gameinfos}:HomeProps)=>{
 
     return(
         <div>
-            this is gamelist
+            this is gamelist from serversideprops
             <div>
                 {gameinfos.map(gameinfo=>{
                     return(
@@ -31,7 +31,7 @@ export const getServerSideProps:GetServerSideProps<HomeProps> = async () =>{
 
     console.log('load serverside props');
     const db = await openDB();
-    const gameinfos = await db.all(`
+    const gameinfos = await db.all<gameInfo[]>(`
         select * from GAMEINFO
     `);
 
